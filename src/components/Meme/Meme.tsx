@@ -20,7 +20,6 @@ export const Meme : React.FC<Props> = ({Meme}) => {
 
     const handleInput = (e : React.ChangeEvent<HTMLInputElement>) => {
         const {value, name} = e.target
-
         setInput(prev => {
             return {
                 ...prev,
@@ -28,24 +27,29 @@ export const Meme : React.FC<Props> = ({Meme}) => {
             }
         })
     }
-
     useEffect(() => {
         setInput({
             up: "",
             down: "",
         })
     }, [Meme])
-
-    
-
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>
-                <input onChange={handleInput} name="up" type="text" value={input.up} className={styles.inputBox}/>
+
+                <div className={styles.form}>
+                    <input placeholder=" " id="up" onChange={handleInput} name="up" type="text" value={input.up} className={styles.inputBox}/>
+                    <label className={styles.labelForm} htmlFor="up">Up</label>
+                </div>
+
                 <h1 className={styles.titleup}>{input.up}</h1>
-                    <img className={styles.memeImage} src={Meme?.url} alt="" />
                 <h1 className={styles.titledown}>{input.down}</h1>
-                <input onChange={handleInput}  type="text" name="down" value={input.down} className={styles.inputBox}/>
+                <img className={styles.memeImage} src={Meme?.url} alt="" />
+
+                <div className={styles.form}>
+                    <input placeholder=" " id="down" onChange={handleInput}  type="text" name="down" value={input.down} className={styles.inputBox}/>
+                    <label className={styles.labelForm} htmlFor="down">Down</label>
+                </div>   
             </div>
         </div>
 

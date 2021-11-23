@@ -8,10 +8,11 @@ type Props = {
 }
 
 const Navbar : React.FC<Props> = ({memes, handleOnChange}) => {
+    console.log(`holis`);
     return (
         <nav className={styles.container}>
             <h1>Meme Generator</h1>
-            <select onChange={handleOnChange}>
+            <select onChange={handleOnChange} className={`${styles.drawBorder} ${styles.btn}`}>
                 {memes.map(meme => 
                     <option key={meme.id} value={meme.name}>{meme.name}</option>
                 )}
