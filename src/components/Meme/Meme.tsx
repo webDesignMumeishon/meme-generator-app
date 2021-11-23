@@ -39,7 +39,7 @@ export const Meme : React.FC<Props> = ({Meme}) => {
 
                 <div className={styles.form}>
                     <input placeholder=" " id="up" onChange={handleInput} name="up" type="text" value={input.up} className={styles.inputBox}/>
-                    <label className={styles.labelForm} htmlFor="up">Up</label>
+                    <label className={styles.labelForm} htmlFor="up">Top</label>
                 </div>
 
                 <h1 className={styles.titleup}>{input.up}</h1>
@@ -48,7 +48,7 @@ export const Meme : React.FC<Props> = ({Meme}) => {
 
                 <div className={styles.form}>
                     <input placeholder=" " id="down" onChange={handleInput}  type="text" name="down" value={input.down} className={styles.inputBox}/>
-                    <label className={styles.labelForm} htmlFor="down">Down</label>
+                    <label className={styles.labelForm} htmlFor="down">Bottom</label>
                 </div>   
             </div>
         </div>
